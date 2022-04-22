@@ -1,0 +1,182 @@
+
+#check{
+    display: none;
+}
+
+#check:checked ~ .nav-menu{
+    height: 100vh;
+}
+
+#check:checked ~ .nav-menu li {
+    display: block;
+}
+
+.banner-text{
+    padding: 0 30px;
+    margin-top: 220px;
+    text-align: center;
+    color: #000;
+}
+
+.banner-text h1{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.banner-text span{
+    color:seagreen
+}
+
+.banner-text h2{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+/*Cliente*/
+.button1{
+    margin-right: 30px;
+    padding: 10px 30px;
+    background-color: seagreen;
+    color: snow;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+/*Cliente*/
+.button1:hover {
+    background-color: #fff;
+    color: seagreen;
+    transition: .5s;
+}
+
+/*Empresa*/
+.button2{
+    margin-right: 0px;
+    padding: 10px 30px;
+    background-color: seagreen;
+    color: snow;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+/*Empresa*/
+.button2:hover {
+    background-color: #fff;
+    color: seagreen;
+    transition: .5s;
+}
+
+/*Ventana modal*/
+.popup .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-150%) scale(0);
+    width: 300px;
+    height: 430px;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: snow;
+    box-shadow: 20px 20px 20px #1e1e1e, 
+                2px 2px 3px #282828;
+    z-index: 1;
+
+}
+
+/*Cerar (X)*/
+.close-btn a{
+    font-family: 'arial';
+    background-color: seagreen;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    color: snow;
+    font-size: 15px;
+    border-radius: 50%;
+    padding: 2px 2px;
+    box-shadow: 1px 1px 1px #1e1e1e;
+
+}
+
+.close-btn a:hover{
+    background-color: #fff;
+    color: seagreen;
+    transition: .5s;
+}
+
+/*Animacion*/
+.popup.active .content{
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+/*Titulo de la ventana modal*/
+h1{
+    color: seagreen;
+    text-align: center;
+    font-size: 55px;
+    font-weight: 500;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+/*Cuadros de ingreso de datos*/
+.input-field .datos{
+    margin-top: 10px;
+    padding: 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    color: black;
+    background: #dfe2e0;
+    box-shadow: inset 5px 5px 5px #dbdbdb, inset -5 -5 5px #b3adad;
+    outline: none;
+
+}
+
+p{
+    color: #bfc0c0;
+    padding: 2px;
+}
+
+/*Boton ingresar*/
+.second-button{
+    font-size: 18px;
+    font-family:"Anton", sans-serif;
+    top: 25px;
+    position: relative;
+    padding: 10px 30px;
+    background-color: seagreen;
+    color: snow;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.second-button:hover{
+    font-family:"Anton", sans-serif;
+    background-color: #fff;
+    color: seagreen;
+    transition: .5s;
+
+}
+
+/*No estas registrado*/
+.content p{
+    color: #000;
+    margin-top: 50px;
+    letter-spacing: .1px;
+}
+
+/*Registrate aqui*/
+.content .validate{
+    color: seagreen;
+}

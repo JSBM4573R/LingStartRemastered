@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+header{
+    font-family:"Anton", sans-serif;
+    top: 0;
+	position: fixed;
+	width: 100%;
+    z-index: 999;
+}
+
+.header2{
+    position: fixed;
+    height: 100px;
+}
+
+
+.header{
+	color: #FFF;
+	background: #f0eded;
+	height: 35px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+    height: 100px;
+    box-shadow:
+    inset 0 -3em 3em rgba(0,0,0,0.1),
+          0 0  0 0px rgb(255,255,255),
+          0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+
+.items{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-right: 100px;
+}
+
+.items span {
+    color: rgb(10, 10, 10);
+    font-size: 11pt;
+    text-transform: uppercase;
+    margin-left: 30px;
+}
+
+.items a {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    margin-left: 30px;
+}
+
+.sidebar{    
+    font-family:"Anton", sans-serif;
+    top: 100px;
+    position: fixed;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    background: seagreen;
+    z-index: 1;
+    border-radius: 3px;
+}
+
+.logo-details{
+    margin-top: 130px;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .logo-details i{
+    font-size: 30px;
+    color: #fff;
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    margin-left: 50px;
+}
+
+.sidebar .logo-details .logo_name{
+    font-size: 35px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-left: 70px;
+    
+}
+
+.sidebar .nav-links{
+    margin-top: 30px;
+    height: 100%;
+    padding-top: 30px;
+}
+
+li{
+    padding: 10px 10px;
+    position: relative;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+li i{
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.sidebar .nav-links a{
+    text-decoration: none;
+}
+
+.link_name{
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.sidebar .nav-links li:hover{
+    background: #197941;
+}
+
+.bx{
+    margin-left: 40px;
+    font-size: 20px;
+}
+
+.bxs-chevron-down{
+    font-size: 25px;
+}
+
+.bx-user{
+    margin-left: 20;
+}
+
+
+.close{
+    color: rgb(0, 0, 0);
+    padding: 12px;
+    border: 2.5px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    transition: .2s all ease;
+    margin-left: 20px;
+}
+
+.close:hover{
+    color: #FFF;
+    border: 3px solid seagreen;
+    background-color: seagreen;
+
+
+}
+
+.logo{
+
+    width: 120px;
+    margin-left: 10px;
+    display: flex;
+    justify-items: left;
+    margin-left: 75px;
+}
+
+body{
+    right: 0;
+}
+
+.contenido{
+    font-family:"Anton", sans-serif;
+    margin-top: 100px;
+    margin-left: 550px;
+    width: 90%;
+    max-width: 500px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(4, auto);
+}
+
+h1{
+    text-align: center;
+}
+
+
+.buttons-Reserva,
+.buttons-client,
+.buttons-message{
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+
+
+
+.buttons-client{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.buttons-Reserva{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.btn{
+    border: none;
+    background-color: #3205d4;
+    color: #E9ECF4;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: auto;
+    font-size: 17px;
+}
+
+.btn:hover{
+    border: none;
+    background-color: #745ad1;
+    color: #E9ECF4;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+input,
+textarea,
+select{
+    font-family:"Anton", sans-serif;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.input-Reserva p,
+.input-client p,
+.input-message p,
+.input-room p{
+    margin: 20px 40px 10px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-room{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+
+.formulario-client{
+    /* margin-left: 100px; */
+    width: 450px;
+    background-color: seagreen;
+    border-radius: 10px;
+    padding: 10px;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-Reserva{
+    /* margin-left: 100px; */
+    width: 450px;
+    background-color: seagreen;
+    border-radius: 10px;
+    padding: 10px;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.titulo-client{
+    margin-top: 80px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.titulo-Reserva{
+    margin-top: 100px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+
+
+.titulo-Reserva,
+.titulo-client,
+.titulo-message{
+    font-size: 1rem;
+}
+
+.img-client{
+    height: 450px;
+    width: 500px;
+}
+
+.input-client p,
+.input-Reserva p{
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/**
+*   Cards
+**/
+.container__cards{
+    font-family: 'Roboto', sans-serif;
+    max-width: 1200px;
+    margin-left: 400px;
+    margin-top: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: justify;
+}
+
+.card{
+    font-family: 'Roboto', sans-serif;
+    width: 350px;
+    margin: 10px;
+    transition: all 300ms;
+    margin-left: 40px;
+}
+
+.card:hover{
+    width: 350px;
+}
+
+.card .cover{
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card .cover img{
+    width: 250px;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 40px;
+    z-index: 1;
+    filter: drop-shadow(5px 5px 4px rgba(0,0,0,0.5));
+    transition: all 400ms;
+}
+
+.card:hover .cover img{
+    top: 0px;
+    filter: none;
+}
+
+.card .img__back{
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    background-size: cover;
+    border-radius: 20px;
+    transition: all 300ms;
+}
+
+.card:nth-of-type(1) .img__back{
+    /* background-image: url(../img/bg1.jpg); */
+    background-image: url(../img/h-small.jpg);
+}
+
+.card:nth-of-type(2) .img__back{
+    /* background-image: url(../img/bg2.jpg); */
+    background-image: url(../img/h-medium.jpg);
+}
+
+.card:nth-of-type(3) .img__back{
+    /* background-image: url(../img/bg3.jpg); */
+    background-image: url(../img/h-vip.jpg);
+}
+
+.card:hover .img__back{
+    bottom: 10px;
+}
+
+.card .description{
+    
+    background: white;
+    margin-top: -10px;
+    padding: 15px;
+    border-radius: 0px 0px 20px 20px;
+    transition: all 300ms;
+}
+
+.card:hover .description{
+    padding: 10px;
+}
+
+.card .description h2{
+    margin-top: 10px;
+}
+
+.card .description p{
+    margin-top: 10px;
+}
+
+.card .description input{
+    padding: 10px 40px;
+    margin-top: 20px;
+    border: none;
+    background: seagreen;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 300ms;
+}
+
+.card .description input:hover{
+    background: rgb(76, 179, 120);
+}
+
+
+
+
+
+.listar-Reserva{
+    width: 60%;
+    margin-left: 500px;
+    margin-top: 100px;
+}
+
+
+
+
+
+
+button{
+    font-size: 5px;
+    padding: 10px;
+    color: #fff;
+    background-color: rgb(153, 24, 24);
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover{
+    background-color: rgb(192, 75, 75);
+}

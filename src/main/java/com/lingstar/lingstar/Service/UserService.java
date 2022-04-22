@@ -69,6 +69,7 @@ public class UserService {
                 }
                 if(dbUser.get().getPassword() != null) {
                     dbUser.get().setPassword(user.getPassword());
+                    user.setPassword(passwordEncode.encode(user.getPassword()));
                 }
                 userRepo.save(user);
                 return dbUser.get();

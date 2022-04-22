@@ -1,13 +1,18 @@
 package com.lingstar.lingstar.Model;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,12 +35,16 @@ public class User implements Serializable {
     private String name;
     @Column(name = "user_lastName", nullable = false, length = 45)
     private String lastName;
-    @Column(name = "user_tel", nullable = false, length = 45)
+    @Column(name = "user_tel", nullable = false, length = 12)
     private String tel;
-    @Column(name = "user_age", nullable = false, length = 12)
+    @Column(name = "user_age", nullable = false, length = 3)
     private String age;
-    @Column(name = "user_email", nullable = false, length = 3)
+    @Column(name = "user_email", nullable = false, length = 45)
     private String email;
     @Column(name = "user_password", nullable = false, length = 60)
     private String password;
+    
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "user")
+    @JsonIgnoreProperties("user")
+    private List<Reservation> reservations;
 }

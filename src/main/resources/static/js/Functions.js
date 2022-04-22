@@ -1,3 +1,13 @@
+$(document).ready(function(){
+    $(window).scroll(function(){
+        if($(this).scrollTop() > 0){
+            $('#header').addClass('#header2');
+        }else{
+            $('#header').removeClass('#header2')
+        }
+    });
+});
+
 function username() {
     $.ajax({
         url:`http://localhost:8080/api/user/username`,
@@ -6,7 +16,8 @@ function username() {
         success:function(request) {
             console.log(request)
             var name = request.name
-            $("#name").html(name)
+            var lastName = request.lastName
+            $("#name").html(name + " " + lastName)
         },
         error:function(xhr, status) {
             console.log(status)
@@ -14,14 +25,25 @@ function username() {
     }) 
 }
 
-// function onloadUsername(request) {
-//     var name = request.name
-//     $("#name").html(name)
-// }
-
-// $(document).ready(function(){
-//     username();
-// })
+function myAccount() {
+    $.ajax({
+        url:`http://localhost:8080/api/user/username`,
+        Type:'GET',
+        dataType:'JSON',
+        success:function(request) {
+            console.log(request)
+            $('#ClientID').val(request.id),
+            $('#Clientname').val(request.name),
+            $('#lastname').val(request.lastName),
+            $('#tel').val(request.tel),
+            $('#age').val(request.age),
+            $('#email').val(request.email);
+        },
+        error:function(xhr, status) {
+            console.log(status)
+        }
+    }) 
+}
 
 function validateLogin() {
     var username = $('#user_email').val()

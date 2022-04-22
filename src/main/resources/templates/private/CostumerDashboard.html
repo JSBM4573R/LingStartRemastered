@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LingStar</title>
+
+    <!-- Styles -->
+    <link rel="shortcut icon" href="img/LSbW.png">
+    <link rel="shortcut icon" th:href="@{/img/LSbW.png}">
+    <link rel="stylesheet" href="css/styleWsp.css">
+    <link rel="stylesheet" th:href="@{/css/styleWsp.css}">
+    <link rel="stylesheet" href="css/styleClienteInterfaz.css">
+    <link rel="stylesheet" th:href="@{/css/styleClienteInterfaz.css}">
+    <script src="https://kit.fontawesome.com/2cb25f2c39.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- sweet alert 2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <div class="header" id="header">
+            <div>
+                <img class="logo" th:src="@{/img/LogocutWwithoutback.png}">
+            </div>
+            <div class="items">
+                <!-- <p><script>document.write(new Date().getFullYear());</script></p> -->
+                <span class="user" id="name"></span>
+                <span>|</span>
+                <form th:action="@{/logout}" method="POST">
+                    <input type="submit" class="close" value="Logout"></input>
+                </form>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <span class="logo_name">BIENVENIDO</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a th:href="@{Dashboard}">
+                    <i class='bx bx-money'></i>
+                    <span class="link_name">Precios</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{MyAccount}">
+                    <i class='bx bx-user'></i>
+                    <span class="link_name">Mi Cuenta</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{Reservations}">
+                    <i class='bx bx-check-square'></i>
+                    <span class="link_name">Reservar</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{MyReservations}">
+                    <i class='bx bxs-calendar-check'></i>
+                    <span class="link_name">Mis Reservas</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+    <div class="container__cards">
+
+        <div class="card">
+            <div class="cover">
+                <!-- <img src="img/p1.png" alt=""> -->
+                <div class="img__back"></div>
+            </div>
+            <div class="description">
+                <h2>Habitacion Small</h2>
+                <p>Habitación clásica y elegante, con cama Queen size de estilo matrimonial en la que podrás pasar una
+                    noche relajante viendo películas y disfrutando del minibar que se encuentra en la habitación. Cuenta
+                    con servicio al cuarto y mantenimiento gratis las 24 horas del día.</p>
+                <a th:href="@{Reservations}">
+                    <input type="button" value="$120.000 / noche">
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cover">
+                <!-- <img src="img/p2.png" alt=""> -->
+                <div class="img__back"></div>
+            </div>
+            <div class="description">
+                <h2>Habitacion Medium</h2>
+                <p>Habitación grande con detallado contemporáneo y cama King size, de confort intemporal, en la que
+                    podrás pasar una estancia tranquila. Cuenta con servicio al cuarto y mantenimiento las 24 horas del
+                    día, serás bienvenido con una deliciosa bebida y la mejor atención para disfrutar al máximo esta
+                    elegante zona.</p>
+                <a th:href="@{Reservations}">
+                    <input type="button" value="$185.000 / noche">
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cover">
+                <!-- <img src="img/p3.png" alt=""> -->
+                <div class="img__back"></div>
+            </div>
+            <div class="description">
+                <h2>Habitacion VIP</h2>
+                <p>Habitación extragrande decorada con elegantes y lujosos textiles. Cuenta con una cama King Size,
+                    servicio al cuarto las 24 horas del día, además de una piscina con jacuzzi en la que podrás
+                    relajarte sutilmente el tiempo que desees. Baño en mármol con bañera y ducha separados y lo mejor de
+                    todo las preciosas vistas a los jardines de Estoril y al mar.</p>
+                <a th:href="@{Reservations}">
+                    <input type="button" value="$386.000 / noche">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Boton de Whatsapp -->
+    <a href="https://api.whatsapp.com/send?phone=5195508107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
+        class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
+    <!-- Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/webjars/sweetalert2/dist/sweetalert2.min.js"></script>
+    <!-- functions.js -->
+    <script type="text/javascript" th:src="@{/js/Functions.js}"></script>
+    <script type="text/javascript" th:src="@{/js/functionScriptClient.js}"></script>
+    <script type="text/javascript" th:src="@{/js/functionScriptHeader.js}"></script>
+    <script src="js/functionScriptClient.js"></script>
+    <script src="js/functionScriptHeader.js"></script>
+    <script>
+        $(document).ready(function () {
+            username();
+        })
+    </script>
+</body>
+
+</html>

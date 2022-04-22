@@ -1,0 +1,72 @@
+/*Formulario*/
+body{
+	height:1100px !important;
+}
+
+form {
+	padding: 30px 10px;
+	background-color: #f1f1f1;
+	margin: auto;
+	max-width: 400px;
+	margin-top: 150px;
+	padding-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 20px 20px 20px #1e1e1e, 
+				2px 2px 3px #282828;
+	z-index: 1;
+    transition: .2s;
+}
+
+.titulo h1{
+	color: seagreen;
+	text-align: center;
+	padding: 18px;
+}
+
+.formulario .datos{
+	text-align: center;
+	background: #dfe2e0;
+	width: calc(100% - 35px);
+	padding: 14px;
+	margin: auto;
+	margin-top: 14px;
+	font-size: 15px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	box-shadow: inset 5px 5px 5px #dbdbdb, inset -5 -5 5px #b3adad;
+}
+
+p{
+	color: #000;
+	margin-top: 16px;
+}
+
+.button_validate{
+    font-size: 15px;
+    font-family:"Anton", sans-serif;
+    top: 20px;
+    position: relative;
+    padding: 10px 30px;
+    background-color: seagreen;
+    color: snow;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.button_validate:hover{
+    background-color: #fff;
+    color: seagreen;
+    transition: .5s;
+}
+
+@media screen and (min-width: 768px){
+    ul.nav-menu{
+		z-index: +1;
+    }
+}
+
+

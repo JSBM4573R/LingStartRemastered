@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .authorizeRequests().antMatchers("/", "/auth/**", "/public/**", "/api/**", "/css/**","/js/**", "/img/**", "/webjars/**")
             .permitAll().anyRequest().authenticated()
         .and()
-            .formLogin().loginPage("/auth/login").defaultSuccessUrl("/private/index", true) .failureUrl("/auth/login?error=true")
+            .formLogin().loginPage("/auth/login").defaultSuccessUrl("/private/user/Dashboard", true) .failureUrl("/auth/login?error=true")
             .loginProcessingUrl("/auth/login-post").permitAll()
         .and()
             .logout().logoutUrl("/logout").deleteCookies("JSESSIONID").logoutSuccessUrl("/public/index").permitAll();
