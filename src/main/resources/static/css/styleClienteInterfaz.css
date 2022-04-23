@@ -162,23 +162,21 @@ li i{
 
 .close{
     color: rgb(0, 0, 0);
-    padding: 12px;
+    padding: 8px;
     border: 2.5px solid rgb(0, 0, 0);
     border-radius: 10px;
-    transition: .2s all ease;
     margin-left: 20px;
+    transition: .2s all ease;
 }
 
 .close:hover{
     color: #FFF;
     border: 3px solid seagreen;
     background-color: seagreen;
-
-
+    transition: .2s all ease;
 }
 
 .logo{
-
     width: 120px;
     margin-left: 10px;
     display: flex;
@@ -192,14 +190,8 @@ body{
 
 .contenido{
     font-family:"Anton", sans-serif;
-    margin-top: 100px;
-    margin-left: 550px;
-    width: 90%;
-    max-width: 500px;
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(4, auto);
+    margin-left: 300px;
+    margin-top: 80px;
 }
 
 h1{
@@ -210,39 +202,31 @@ h1{
 .buttons-Reserva,
 .buttons-client,
 .buttons-message{
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     border: none;
 }
 
 
-
-.buttons-client{
-    grid-column: 1/2;
-    grid-row: 3/4;
+.buttons-Reserva .btn,
+.buttons-client .btn,
+.buttons-message .btn{
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border: 2.5px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    transition: .2s all ease;
 }
 
-.buttons-Reserva{
-    grid-column: 1/2;
-    grid-row: 3/4;
-}
-
-.btn{
+.buttons-Reserva .btn:hover,
+.buttons-client .btn:hover,
+.buttons-message .btn:hover{
     border: none;
-    background-color: #3205d4;
+    padding: 12.5px;
+    background-color: #0c16d6d7;
     color: #E9ECF4;
-    border-radius: 3px;
-    cursor: pointer;
-    padding: 10px 20px;
-    margin: auto;
-    font-size: 17px;
-}
-
-.btn:hover{
-    border: none;
-    background-color: #745ad1;
-    color: #E9ECF4;
-    border-radius: 3px;
+    border-radius: 10px;
     cursor: pointer;
     transition: .3s;
 }
@@ -274,7 +258,7 @@ select{
 }
 
 .formulario-client{
-    /* margin-left: 100px; */
+    margin: auto;
     width: 450px;
     background-color: seagreen;
     border-radius: 10px;
@@ -286,7 +270,7 @@ select{
 }
 
 .formulario-Reserva{
-    /* margin-left: 100px; */
+    margin: auto;
     width: 450px;
     background-color: seagreen;
     border-radius: 10px;
@@ -319,6 +303,7 @@ select{
 }
 
 .img-client{
+    margin-top: 150px;
     height: 450px;
     width: 500px;
 }
@@ -333,9 +318,10 @@ select{
 *   Cards
 **/
 .container__cards{
+    border: none;
     font-family: 'Roboto', sans-serif;
     max-width: 1200px;
-    margin-left: 400px;
+    margin-left: 350px;
     margin-top: 150px;
     display: flex;
     flex-wrap: wrap;
@@ -343,7 +329,7 @@ select{
     text-align: justify;
 }
 
-.card{
+.cards{
     font-family: 'Roboto', sans-serif;
     width: 350px;
     margin: 10px;
@@ -351,18 +337,18 @@ select{
     margin-left: 40px;
 }
 
-.card:hover{
+.cards:hover{
     width: 350px;
 }
 
-.card .cover{
+.cards .cover{
     width: 100%;
     height: 250px;
     position: relative;
     overflow: hidden;
 }
 
-.card .cover img{
+.cards .cover img{
     width: 250px;
     display: block;
     margin: auto;
@@ -373,12 +359,12 @@ select{
     transition: all 400ms;
 }
 
-.card:hover .cover img{
+.cards:hover .cover img{
     top: 0px;
     filter: none;
 }
 
-.card .img__back{
+.cards .img__back{
     width: 100%;
     height: 200px;
     position: absolute;
@@ -389,27 +375,26 @@ select{
     transition: all 300ms;
 }
 
-.card:nth-of-type(1) .img__back{
+.cards:nth-of-type(1) .img__back{
     /* background-image: url(../img/bg1.jpg); */
     background-image: url(../img/h-small.jpg);
 }
 
-.card:nth-of-type(2) .img__back{
+.cards:nth-of-type(2) .img__back{
     /* background-image: url(../img/bg2.jpg); */
     background-image: url(../img/h-medium.jpg);
 }
 
-.card:nth-of-type(3) .img__back{
+.cards:nth-of-type(3) .img__back{
     /* background-image: url(../img/bg3.jpg); */
     background-image: url(../img/h-vip.jpg);
 }
 
-.card:hover .img__back{
+.cards:hover .img__back{
     bottom: 10px;
 }
 
-.card .description{
-    
+.cards .description{
     background: white;
     margin-top: -10px;
     padding: 15px;
@@ -417,22 +402,21 @@ select{
     transition: all 300ms;
 }
 
-.card:hover .description{
+.cards:hover .description{
     padding: 10px;
 }
 
-.card .description h2{
+.cards .description h2{
     margin-top: 10px;
 }
 
-.card .description p{
+.cards .description p{
     margin-top: 10px;
 }
 
-.card .description input{
+.cards .description input{
     padding: 10px 40px;
     margin-top: 20px;
-    border: none;
     background: seagreen;
     color: white;
     font-size: 14px;
@@ -441,7 +425,7 @@ select{
     transition: all 300ms;
 }
 
-.card .description input:hover{
+.cards .description input:hover{
     background: rgb(76, 179, 120);
 }
 
@@ -452,16 +436,22 @@ select{
 .listar-Reserva{
     width: 60%;
     margin-left: 500px;
-    margin-top: 100px;
+    margin-top: 200px;
+}
+
+.listar-Reserva th,
+.listar-Reserva td,
+.listar-Reserva tr,
+.listar-Reserva table{
+    padding: 10px;
 }
 
 
 
 
 
-
-button{
-    font-size: 5px;
+.btn-borrarRegistroReserva{
+    font-size: 15px;
     padding: 10px;
     color: #fff;
     background-color: rgb(153, 24, 24);
@@ -472,6 +462,6 @@ button{
     transition: .3s;
 }
 
-button:hover{
+.btn-borrarRegistroReserva:hover{
     background-color: rgb(192, 75, 75);
 }

@@ -1,5 +1,4 @@
 function agregarClient() {
-    //capturar los valores contenidos en las cajas de los input del formualrio index.html
     var datos={
         id:$("#ClientID").val(),
         name:$("#Clientname").val(),
@@ -9,21 +8,15 @@ function agregarClient() {
         email:$("#email").val(),
         password:$("#password").val(),
     }
-    
-    //convertir a JSON
     let datosPeticion=JSON.stringify(datos);
-
-    //Realizamos la peticion AJAX
     $.ajax({
         url:"https://g7f0671950df122-jsbm.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/cliente/cliente",
         data:datosPeticion,
         type:"POST",
         contentType:"application/JSON",
-        //si es correcto muestreme mensaje        
         success:function (respuesta){
             console.log("insertado exitosamente")
         },
-        //si es incorrecto muestreme error = xhr
         error:function(xhr, status){
             console.log(status);
         }
@@ -32,21 +25,17 @@ function agregarClient() {
 
 function listarClient() {
     $("#btn-agregarClient").hide();
-
     $.ajax({
         url:"https://g7f0671950df122-jsbm.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/cliente/cliente",
         Type:"GET",
         dataType:"json",
-
         success:function (respuesta) {
             console.log(respuesta);
             listarRespuestaClient(respuesta.items);
         },
-
         error:function (xhr, status) {
             console.log(status);
         }
-        
     });
 }
 
@@ -76,9 +65,7 @@ function listarRespuestaClient(items) {
                 </tr>`;
     }
     tabla+=`</table>`
-
     console.log(tabla);
-
     $("#listadoClient").html(tabla)
 }
 
@@ -87,22 +74,17 @@ function editarRegistroClient() {
     $("#btn-agregarClient").hide();
     $("#btn-listarClient").hide();
     $("#ClientID").prop('disabled', true);
-
     var datos={
         id:ClientID
     }
-
     let datosPeticion=JSON.stringify(datos);
-
     $.ajax({
         url:"https://g7f0671950df122-jsbm.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/cliente/cliente/"+ClientID,
         data:datosPeticion,
         type:'GET',
         dataType:'json',
-    
         success:function (respuesta) {
             var items=respuesta.items;
-
             $('#ClientID').val(items[0].id),
             $('#Clientname').val(items[0].name),
             $('#lastname').val(items[0].lastname),
@@ -112,85 +94,105 @@ function editarRegistroClient() {
             $('#password').val(items[0].password);
             console.log(items);
         },
-
-        //xhr = codigo del error
         error:function(xhr, status){
             console.log(status);
-    
         }
     });
 }
 
 function actualizarRegistroClient() {
-
     var password = $("#password").val()
     var passwordConfirm = $("#passwordConfirm").val()
-
-    if (password === passwordConfirm) {
-        var datos={
-            id:$("#ClientID").val(),
-            name:$("#Clientname").val(),
-            lastName:$("#lastname").val(),
-            tel:$("#tel").val(),
-            age:$("#age").val(),
-            email:$("#email").val(),
-            password:$("#password").val()
-        }
-    
-        //conversion a JSON
-        let datosPeticion=JSON.stringify(datos);
-    
-        //Hacemos peticion Ajax
-        $.ajax({
-            url:`http://localhost:8080/api/user/update`,
-            data:datosPeticion,
-            type:'PUT',
-            contentType:'application/JSON',
-    
-            success:function (respuesta) {
-                console.log("actualizado!");
-            },
-    
-            //xhr = codigo del error
-            error:function(xhr, status){
-                console.log(status);
-    
-            }
-        });
-    } else {
+    if(password.length == 0 || passwordConfirm == 0) {
         Swal.fire({
             position: 'center',
             icon: 'warning',
-            title: 'Tu contraseña no coincide!',
+            title: 'Todos los campos son necesarios',
             showConfirmButton: false,
             timer: 1900
         })
-        $("#passwordConfirm").val("").focus()
-    }
-    
+    } else {
+        if (password === passwordConfirm) {
+            var datos={
+                id:$("#ClientID").val(),
+                name:$("#Clientname").val(),
+                lastName:$("#lastname").val(),
+                tel:$("#tel").val(),
+                age:$("#age").val(),
+                email:$("#email").val(),
+                password:$("#password").val()
+            }
+            let datosPeticion=JSON.stringify(datos);
+            $.ajax({
+                url:`http://localhost:8080/api/user/update`,
+                data:datosPeticion,
+                type:'PUT',
+                contentType:'application/JSON',
+                success:function (respuesta) {
+                    console.log("actualizado!");
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Actualizado correctamente',
+                        showConfirmButton: false,
+                        timer: 1800
+                    });
+                },
+                error:function(xhr, status){
+                    console.log(status);
+                }
+            });
+        } else {
+            Swal.fire({
+                position: 'center',
+                icon: 'warning',
+                title: 'Tu contraseña no coincide!',
+                showConfirmButton: false,
+                timer: 1900
+            })
+            $("#passwordConfirm").val("").focus()
+        }
+    } 
 }
 
 function borrarRegistroClient(ClientID) {
     var datos={
         id:ClientID
     }
-
     let datosPeticion=JSON.stringify(datos);
-
     $.ajax({
         url:"https://g7f0671950df122-jsbm.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/cliente/cliente",
         data:datosPeticion,
         type:"DELETE",
         contentType:"application/JSON",
-
         success:function (respuesta) {
             console.log("Borrado");
             listarClient();
         },
-    
-        //xhr = codigo del error
         error:function(xhr, status){
             console.log(status);
         }
     });
 }
+
+function autoInicioUser() {
+    console.log("Se esta ejecutando user...")
+    $.ajax({
+        url:"http://localhost:8080/api/user/username",
+        datatype:"JSON",
+        Type:"GET",
+        success:function(respuesta){
+            console.log(respuesta);
+            let $select = $("#select-user");
+            $select.append('<option value='+respuesta.id+'>'+respuesta.name+'</option>');
+        },
+        error:function(xhr, status){
+            console.log(status);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+            });
+        }
+    });
+}
+

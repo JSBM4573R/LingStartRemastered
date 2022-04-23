@@ -2,8 +2,8 @@
 	position:fixed;
 	width:60px;
 	height:60px;
-	bottom:40px;
-	right:40px;
+	bottom:30px;
+	right:2px;
 	background-color:#25d366;
 	color:#FFF;
 	border-radius:50px;
@@ -11,7 +11,7 @@
   	font-size:30px;
 	box-shadow: 2px 2px 3px rgb(19, 18, 18);
  	z-index:1;
-	margin-right: 50px;
+	margin-right: 80px;
 	margin-bottom: 50px;
 	transition: .3s;
 }

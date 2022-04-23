@@ -55,5 +55,4 @@ public class UserRepository implements IUserCrudRepository {
         return userCrudRepo.findByName(name);
     }
 
-
 }

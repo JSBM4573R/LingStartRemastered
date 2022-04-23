@@ -8,11 +8,11 @@
     <title>LingStar</title>
 
     <!-- Styles -->
-    <link rel="shortcut icon" href="img/LSbW.png">
+    <link rel="shortcut icon" href="../../static/img/LSbW.png">
     <link rel="shortcut icon" th:href="@{/img/LSbW.png}">
-    <link rel="stylesheet" href="css/styleWsp.css">
+    <link rel="stylesheet" href="../../static/css/styleWsp.css">
     <link rel="stylesheet" th:href="@{/css/styleWsp.css}">
-    <link rel="stylesheet" href="css/styleClienteInterfaz.css">
+    <link rel="stylesheet" href="../../static/css/styleClienteInterfaz.css">
     <link rel="stylesheet" th:href="@{/css/styleClienteInterfaz.css}">
     <script src="https://kit.fontawesome.com/2cb25f2c39.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
@@ -39,7 +39,7 @@
                 <span class="user" id="name"></span>
                 <span>|</span>
                 <form th:action="@{/logout}" method="POST">
-                    <input type="submit" class="close" value="Logout"></input>
+                    <input type="submit" class="close" value="Cerrar Session"></input>
                 </form>
             </div>
         </div>
@@ -77,34 +77,43 @@
         </ul>
     </div>
 
-    <!--Formulario-cliente-->
+
     <div class="contenido">
-        <div class="titulo-client">
-            <h1>MIS DATOS</h1>
-        </div>
-        <div class="formulario-client">
-            <div class="input-client">
-                <p><input type="number" id="ClientID" placeholder="id"></p>
-                <p>EMAIL <input type="email" id="email" placeholder="Tu email"></p>
-                <p>NOMBRES <input type="text" id="Clientname" placeholder="Tu nombre"></p>
-                <p>APELLIDOS <input type="text" id="lastname" placeholder="Tu apellido"></p>
-                <p>TELEFONO <input type="number" id="tel" placeholder="Tu telefono"></p>
-                <p>EDAD <input type="number" id="age" placeholder="Tu edad"></p>
-                <p>CONTRASEÑA <input type="password" id="password" placeholder="Tu contraseña"></p>
-                <p>CONFIMA TU CONTRASEÑA <input type="password" id="passwordConfirm" placeholder="Confirma Tu contraseña"></p>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="titulo-client">
+                        <h1>MIS DATOS</h1>
+                    </div>
+                    <div class="formulario-client">
+                        <div class="input-client">
+                            <p><input type="number" id="ClientID" placeholder="id"></p>
+                            <p>EMAIL <input type="email" id="email" placeholder="Tu email"></p>
+                            <p>NOMBRES <input type="text" id="Clientname" placeholder="Tu nombre"></p>
+                            <p>APELLIDOS <input type="text" id="lastname" placeholder="Tu apellido"></p>
+                            <p>TELEFONO <input type="number" id="tel" placeholder="Tu telefono"></p>
+                            <p>EDAD <input type="number" id="age" placeholder="Tu edad"></p>
+                            <p>CONTRASEÑA <input type="password" id="password" placeholder="Tu contraseña"></p>
+                            <p>CONFIMA TU CONTRASEÑA <input type="password" id="passwordConfirm" placeholder="Confirma Tu contraseña"></p>
+                        </div>
+                    </div>
+                    <div class="buttons-client">
+                        <!-- <button class="btn btn-guardarClient" id="btn-agregarClient" onclick="agregarClient()">Agregar</button>
+                        <button class="btn btn-listarClient" id="btn-listarClient" onclick="listarClient()">Listar</button> -->
+                        <button class="btn btn-guardarEdicionClient" id="btn-guardarEdicionClient"
+                            onclick="actualizarRegistroClient()">Actualizar</button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="imagen-client">
+                        <img class="img-client" th:src="@{/img/Hidden-amico.svg}" alt="google-image">
+                        <!-- <img class="img-client" src="../../static/img/Hidden-amico.svg" alt="google-image"> -->
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="buttons-client">
-            <button class="btn btn-guardarClient" id="btn-agregarClient" onclick="agregarClient()">Agregar</button>
-            <button class="btn btn-listarClient" id="btn-listarClient" onclick="listarClient()">Listar</button>
-            <button class="btn btn-guardarEdicionClient" id="btn-guardarEdicionClient"
-                onclick="actualizarRegistroClient()">Actualizar</button>
-        </div>
-        <div class="listar-client" id="listadoClient"></div>
-        <div class="imagen-client">
-            <img class="img-client" th:src="@{/img/Hidden-amico.svg}" alt="google-image">
-        </div>
     </div>
+    <div class="listar-client" id="listadoClient"></div>
 
     <!-- Boton de Whatsapp -->
     <a href="https://api.whatsapp.com/send?phone=5195508107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."

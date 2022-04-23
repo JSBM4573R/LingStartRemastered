@@ -17,8 +17,7 @@ function listarClient() {
         
     });
 }
-143 93
-150 97
+
 function listarRespuestaClient(items) {
     var tabla=`<table border="2">
                 <tr>

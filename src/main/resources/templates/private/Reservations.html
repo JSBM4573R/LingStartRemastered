@@ -8,11 +8,11 @@
     <title>LingStar</title>
 
     <!-- Styles -->
-    <link rel="shortcut icon" href="img/LSbW.png">
+    <link rel="shortcut icon" href="../../static/img/LSbW.png">
     <link rel="shortcut icon" th:href="@{/img/LSbW.png}">
-    <link rel="stylesheet" href="css/styleWsp.css">
+    <link rel="stylesheet" href="../../static/css/styleWsp.css">
     <link rel="stylesheet" th:href="@{/css/styleWsp.css}">
-    <link rel="stylesheet" href="css/styleClienteInterfaz.css">
+    <link rel="stylesheet" href="../../static/css/styleClienteInterfaz.css">
     <link rel="stylesheet" th:href="@{/css/styleClienteInterfaz.css}">
     <script src="https://kit.fontawesome.com/2cb25f2c39.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
@@ -39,12 +39,11 @@
                 <span class="user" id="name"></span>
                 <span>|</span>
                 <form th:action="@{/logout}" method="POST">
-                    <input type="submit" class="close" value="Logout"></input>
+                    <input type="submit" class="close" value="Cerrar Session"></input>
                 </form>
             </div>
         </div>
     </header>
-
 
     <div class="sidebar">
         <div class="logo-details">
@@ -80,43 +79,51 @@
 
     <!--Form-cliente-->
     <div class="contenido">
-        <div class="titulo-Reserva">
-            <h1>RESERVA</h1>
-        </div>
-        <div class="formulario-Reserva">
-            <div class="input-Reserva">
-                <p>CODIGO <input type="number" id="ReservaID" placeholder="codigo"></p>
-                <p>Habitacion <select id="room" class="input-room">
-                        <option>Habitacion Pequeña</option>
-                        <option>Habitacion Mediana</option>
-                        <option>Habitacion Grande</option>
-                    </select></p>
-                <p>FECHA DE INGRESO <input type="date" id="startdate" placeholder="ingreso"></p>
-                <p>FECHA DE SALIDA <input type="date" id="enddate" placeholder="salida"></p>
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="titulo-Reserva">
+                        <h1>RESERVA</h1>
+                    </div>
+                    <div class="formulario-Reserva">
+                        <!-- <form th:action="@{Reservations}" th:object="${reservation}" method="POST" name="formSaveReservation"> -->
+                            <div class="input-Reserva">
+                                <!-- <p>CODIGO <input type="number" id="ReservaID" placeholder="codigo"></p> -->
+                                <p>Habitacion <select id="room" class="input-room">
+                                    <!-- <p>Habitacion <select id="room" class="input-room" th:field="*{room}"> -->
+                                        <option>Habitacion Pequeña</option>
+                                        <option>Habitacion Mediana</option>
+                                        <option>Habitacion Grande</option>
+                                    </select></p>
+                                <!-- <p>FECHA DE INGRESO <input type="date" id="startdate" placeholder="ingreso" th:field="*{dateGetInto}"></p> -->
+                                <p>FECHA DE INGRESO <input type="date" id="startdate" placeholder="ingreso"></p>
+                                <!-- <p>FECHA DE SALIDA <input type="date" id="enddate" placeholder="salida" th:field="*{dateGetOut}"></p> -->
+                                <p>FECHA DE SALIDA <input type="date" id="enddate" placeholder="salida"></p>
+                                <p><select id="select-user"></select></p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="buttons-Reserva">
+                        <button class="btn btn-guardarReserva" id="btn-agregarReserva" onclick="agregarReserva()">Reservar</button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="imagen-client">
+                        <!-- <img class="img-client" src="../../static/img/Date-picker-amico.svg" alt="google-image"> -->
+                        <img class="img-client" th:src="@{/img/Date-picker-amico.svg}" alt="google-image">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="buttons-Reserva">
-            <button class="btn btn-guardarReserva" id="btn-agregarReserva" onclick="agregarReserva()"
-                data-swal-toast-template='#my-template'>Reservar</button>
+    </div>
+        <!-- <div class="buttons-Reserva">
+           
             <button class="btn btn-listarReserva" id="btn-listarReserva" onclick="listarReserva()">Listar</button>
             <button class="btn btn-guardarEdicionReserva" id="btn-guardarEdicionReserva"
                 onclick="actualizarRegistroReserva()">Actualizar</button>
-            <script>
-                $(document).ready(function () {
-                    $("#btn-guardarEdicionReserva").hide();
-                    $("#btn-guardarEdicionReserva").show();
-                    $("#btn-listarReserva").hide();
-                    $("#btn-guardarEdicionReserva").hide();
-                })
-            </script>
-        </div>
+        </div> -->
 
         <div class="listar-Reserva" id="listadoReserva"></div>
-
-        <div class="imagen-client">
-            <img class="img-client" th:src="@{/img/Date-picker-amico.svg}" alt="google-image">
-        </div>
-    </div>
 
     <!-- Boton de Whatsapp -->
     <a href="https://api.whatsapp.com/send?phone=5195508107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
@@ -139,7 +146,10 @@
     <script>
         $(document).ready(function () {
             username();
-            listarReserva();
+            autoInicioUser();
+            $("#btn-guardarEdicionReserva").show();
+            $("#btn-agregarReserva").show();
+            $("#select-user").hide();
         })
     </script>
 </body>
