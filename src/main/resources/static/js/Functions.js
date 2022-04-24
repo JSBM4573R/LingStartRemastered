@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 function username() {
     $.ajax({
-        url:`http://localhost:8080/api/user/username`,
+        url:`http://localhost:8081/api/user/username`,
         Type:'GET',
         dataType:'JSON',
         success:function(request) {
@@ -27,7 +27,7 @@ function username() {
 
 function myAccount() {
     $.ajax({
-        url:`http://localhost:8080/api/user/username`,
+        url:`http://localhost:8081/api/user/username`,
         Type:'GET',
         dataType:'JSON',
         success:function(request) {
@@ -81,7 +81,13 @@ function validateRegister() {
             })
     } else {
         if(userPassword === userConfirmPassword) {
-            document.formRegister.submit();
+            Swal.fire({
+                title: 'Registrado Correctamente',
+                icon: 'success',
+            })
+            setTimeout(() => {
+                document.formRegister.submit();
+            }, 1900);
         } else {
             Swal.fire({
                 position: 'center',

@@ -7,7 +7,7 @@ function agregarReserva() {
     }
     let datosPeticion=JSON.stringify(datos);
     $.ajax({
-        url:`http://localhost:8080/api/reservation/new`,
+        url:`http://localhost:8081/api/reservation/new`,
         data:datosPeticion,
         type:"POST",
         contentType:"application/JSON",
@@ -48,7 +48,7 @@ function validateReservation() {
 
 function MisReservas() {
     $.ajax({
-        url:`http://localhost:8080/api/user/username`,
+        url:`http://localhost:8081/api/user/username`,
         Type:'GET',
         dataType:'JSON',
         success:function(request) {
@@ -70,7 +70,7 @@ function MisReservas() {
 // function listarReservas(id) {
 //     // $("#btn-agregarReserva").hide();
 //     $.ajax({
-//         url:`http://localhost:8080/api/user/reservations/${id}`,
+//         url:`http://localhost:8081/api/user/reservations/${id}`,
 //         Type:"GET",
 //         dataType:"json",
 //         success:function (respuesta) {
@@ -114,7 +114,7 @@ function editarRegistroReserva(ReservaID) {
     }
     let datosPeticion=JSON.stringify(datos);
     $.ajax({
-        url:`http://localhost:8080/api/reservation/${ReservaID}`,
+        url:`http://localhost:8081/api/reservation/${ReservaID}`,
         data:datosPeticion,
         type:'GET',
         dataType:'json',
@@ -142,7 +142,7 @@ function actualizarRegistroReserva() {
     }
     let datosPeticion=JSON.stringify(datos);
     $.ajax({
-        url:`http://localhost:8080/api/reservation/update`,
+        url:`http://localhost:8081/api/reservation/update`,
         data:datosPeticion,
         type:'PUT',
         contentType:'application/JSON',
@@ -175,7 +175,7 @@ function borrarRegistroReserva(ReservaID) {
             showConfirmButton: false
           })
           $.ajax({
-                url:`http://localhost:8080/api/reservation/delete/${ReservaID}`,
+                url:`http://localhost:8081/api/reservation/delete/${ReservaID}`,
                 type:"DELETE",
                 contentType:"application/JSON",
                 success:function () {

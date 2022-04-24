@@ -124,7 +124,7 @@ function actualizarRegistroClient() {
             }
             let datosPeticion=JSON.stringify(datos);
             $.ajax({
-                url:`http://localhost:8080/api/user/update`,
+                url:`http://localhost:8081/api/user/update`,
                 data:datosPeticion,
                 type:'PUT',
                 contentType:'application/JSON',
@@ -178,7 +178,7 @@ function borrarRegistroClient(ClientID) {
 function autoInicioUser() {
     console.log("Se esta ejecutando user...")
     $.ajax({
-        url:"http://localhost:8080/api/user/username",
+        url:"http://localhost:8081/api/user/username",
         datatype:"JSON",
         Type:"GET",
         success:function(respuesta){

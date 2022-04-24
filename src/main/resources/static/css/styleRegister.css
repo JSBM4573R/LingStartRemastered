@@ -4,6 +4,7 @@ body{
 }
 
 form {
+	height: auto;
 	padding: 30px 10px;
 	background-color: #f1f1f1;
 	margin: auto;
@@ -13,8 +14,7 @@ form {
 	margin-bottom: 20px;
 	border-radius: 10px;
 	text-align: center;
-	box-shadow: 20px 20px 20px #1e1e1e, 
-				2px 2px 3px #282828;
+	box-shadow: 3px 3px 50px rgba(0, 0, 0, 0.50);
 	z-index: 1;
     transition: .2s;
 }
@@ -40,6 +40,7 @@ form {
 }
 
 p{
+	width: 100%;
 	color: #000;
 	margin-top: 16px;
 }

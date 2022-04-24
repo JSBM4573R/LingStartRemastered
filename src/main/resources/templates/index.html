@@ -1,34 +1,134 @@
+
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="../static/css/style.css">
-  <link rel="stylesheet" th:href="@{/css/style.css}">
-  
+    <title>LingStar</title>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos -->
+    <link rel="shortcut icon" href="../static/img/LSbW.png">
+    <link rel="shortcut icon" th:href="@{/img/LSbW.png}">
+    <link rel="stylesheet" href="../static/css/StyleHome.css">
+    <link rel="stylesheet" th:href="@{/css/StyleHome.css}">
+    <link rel="stylesheet" href="../static/css/styleWsp.css">
+    <link rel="stylesheet" th:href="@{/css/styleWsp.css}">
+    <link rel="stylesheet" href="../static/css/styleHeader.css">
+    <link rel="stylesheet" th:href="@{/css/styleHeader.css}">
+    <script src="https://kit.fontawesome.com/2cb25f2c39.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!--footer-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
 </head>
+
 <body>
-  <nav style="height: 120px; top: 0px; margin: auto; background-color: #f5f5f5; display: flex; justify-content: center;">
-    <ul class="nav" style="padding: 20px;">
-      <li class="nav-item" style="padding: 30px; cursor: pointer;">
-        <a th:href="@{/auth/login}">Login</a>
-      </li>
-      <li class="nav-item" style="padding: 30px; cursor: pointer;">
-        <a th:href="@{/auth/register}">Registro</a>
-      </li>
-  </ul>
-  </nav>
-  <!-- <script type="text/javascript" th:src="@{/js/functions.js}"></script> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="/webjars/sweetalert2/dist/sweetalert2.min.js"></script>
-  <!-- functions.js -->
-  <script type="text/javascript" th:src="@{/js/Functions.js}"></script>
-  <script src="../static/js/Functions.js"></script>
+    <header>
+        <nav class="wrapper">
+            <div>
+                <img class="logo" src="../static/img/LogocutWwithoutback.png">
+                <img class="logo" th:src="@{/img/LogocutWwithoutback.png}">
+            </div>
+            <input type="checkbox" id="check">
+            <label for="check" class="bar-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul class="nav-menu">
+                <li><a th:href="@{/auth/register}">Registrarse</a></li>
+                <li><a th:href="@{/auth/login}">Ingresar</a></li>
+                <li><a th:href="@{/auth/register}">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="main-text">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1> BIENVENIDO A LINGSTAR</h1>
+                        <p>Lingstar es una pequeña plataforma de búsqueda
+                            para agendamiento hotelero, que tiene como 
+                            objetivo proporcionar un servicio de calidad
+                            en el que cada usuario mantenga una búsqueda
+                            estable y funcional a la hora de agendar una
+                            cita para hospedarse.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="img-box">
+                            <!-- <img src="../static/img/backshapeee.png" class="back-img"> -->
+                            <img class="back-img" th:src="@{/img/backshapeee.png}">
+                            <!-- <img src="../static/img/lapim.png" class="main-img"> -->
+                            <img class="main-img" th:src="@{/img/lapim.png}">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       
+    </section>
+
+
+    <section>
+        
+        <div class="content-section">
+                <div class="title">
+                    <h1>¿Porqué LingStar?</h1>
+                </div>
+                <div class="content">
+                        <p>Con el uso de Lingstar ya no va a ser necesario 
+                            el realizar agendamientos preseciales que por lo 
+                            general tomarán más tiempo, podrás agendar en el 
+                            hotel seleccionando una habitación realmente cómoda 
+                            pasar esas vacaciones inolvidables o las cálidas 
+                            vacaciones familiares.
+                        </p>
+                        <h3>Somos tu mejor opción.</h3>
+                            
+                </div>
+                <div class="image-section">
+                    <!-- <img src="../static/img/bodyimage.jpg"> -->
+                    <img th:src="@{/img/bodyimage.jpg}">
+                </div>
+                 
+        </div>
+
+    </section>
+    <section>
+        <footer>
+            <div class="footer-content">
+                <h3>LingStar <a>®</a></h3>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p> LingStar &copy; <script>document.write(new Date().getFullYear());</script> Diseñado por <span> Juan Sebastian Bustos Marroquin</span></p>
+            </div>
+        </footer>
+    </section>
+
+    <!-- Boton de Whatsapp-->
+    <a href="https://api.whatsapp.com/send?phone=5195508107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/webjars/sweetalert2/dist/sweetalert2.min.js"></script>
+    <!-- functions.js -->
+    <script type="text/javascript" th:src="@{/js/Functions.js}"></script>
+    <script src="../static/js/Functions.js"></script>
 </body>
+
 </html>

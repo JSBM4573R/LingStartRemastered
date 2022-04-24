@@ -28,6 +28,16 @@ header {
     height: 100px;
 }
 
+.back-img{
+    height: 30%;
+    width: auto;
+}
+
+.main-img{
+    height: 30%;
+    width: auto;
+}
+
 .img-box {
     width: 50%;
     height: 75%;
@@ -47,6 +57,7 @@ header {
     transform: translateX(-50%);
     transition: bottom 1s, left 1s;
 }
+
 
 .img-box:hover .back-img {
     bottom: 40px;
@@ -137,10 +148,15 @@ header {
 
 }
 
-.section {
+.section{
     margin-top: 600px;
     width: 100%;
     background-color: #f1f1f1;
+}
+
+section{
+    height: auto;
+    width: auto;
 }
 
 .container {
