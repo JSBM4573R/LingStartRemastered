@@ -28,8 +28,7 @@
     <header>
         <nav class="wrapper">
             <div>
-                <img class="logo" src="../static/img/LogocutWwithoutback.png">
-                <img class="logo" th:src="@{/img/LogocutWwithoutback.png}">
+                <a th:href="@{/}"><img class="logo" th:src="@{/img/LogocutWwithoutback.png}"></a>
             </div>
             <input type="checkbox" id="check">
             <label for="check" class="bar-btn">
@@ -38,7 +37,6 @@
             <ul class="nav-menu">
                 <li><a th:href="@{/auth/register}">Registrarse</a></li>
                 <li><a th:href="@{/auth/login}">Ingresar</a></li>
-                <li><a th:href="@{/}">Home</a></li>
             </ul>
         </nav>
     </header>

@@ -3,6 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 
+body{
+    background-image: url(../img/backgorundLog.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
 #check{
     display: none;
 }

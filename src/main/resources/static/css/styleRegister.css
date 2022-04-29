@@ -1,7 +1,16 @@
 /*Formulario*/
-body{
+/* body{
 	height:1100px !important;
+} */
+
+body{
+    background-image: url(../img/backgorundLog.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
 }
+
 
 form {
 	height: auto;
