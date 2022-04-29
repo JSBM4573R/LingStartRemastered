@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 function username() {
     $.ajax({
-        url:`http://localhost:8081/api/user/username`,
+        url:`http://158.101.30.210:8081/api/user/username`,
         Type:'GET',
         dataType:'JSON',
         success:function(request) {
@@ -27,7 +27,7 @@ function username() {
 
 function myAccount() {
     $.ajax({
-        url:`http://localhost:8081/api/user/username`,
+        url:`http://158.101.30.210:8081/api/user/username`,
         Type:'GET',
         dataType:'JSON',
         success:function(request) {

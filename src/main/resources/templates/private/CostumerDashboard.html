@@ -8,11 +8,8 @@
     <title>LingStar</title>
 
     <!-- Styles -->
-    <link rel="shortcut icon" href="img/LSbW.png">
     <link rel="shortcut icon" th:href="@{/img/LSbW.png}">
-    <link rel="stylesheet" href="css/styleWsp.css">
     <link rel="stylesheet" th:href="@{/css/styleWsp.css}">
-    <link rel="stylesheet" href="css/styleClienteInterfaz.css">
     <link rel="stylesheet" th:href="@{/css/styleClienteInterfaz.css}">
     <script src="https://kit.fontawesome.com/2cb25f2c39.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
@@ -35,7 +32,6 @@
                 <img class="logo" th:src="@{/img/LogocutWwithoutback.png}">
             </div>
             <div class="items">
-                <!-- <p><script>document.write(new Date().getFullYear());</script></p> -->
                 <span class="user" id="name"></span>
                 <span>|</span>
                 <form th:action="@{/logout}" method="POST">
@@ -86,7 +82,6 @@
 
         <div class="cards">
             <div class="cover">
-                <!-- <img src="img/p1.png" alt=""> -->
                 <div class="img__back"></div>
             </div>
             <div class="description">
@@ -102,7 +97,6 @@
 
         <div class="cards">
             <div class="cover">
-                <!-- <img src="img/p2.png" alt=""> -->
                 <div class="img__back"></div>
             </div>
             <div class="description">
@@ -119,7 +113,6 @@
 
         <div class="cards">
             <div class="cover">
-                <!-- <img src="img/p3.png" alt=""> -->
                 <div class="img__back"></div>
             </div>
             <div class="description">
@@ -137,8 +130,6 @@
     </div>
 
 
-
-
     <!-- Boton de Whatsapp -->
     <a href="https://api.whatsapp.com/send?phone=5195508107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
         class="float" target="_blank">
@@ -153,8 +144,6 @@
     <script type="text/javascript" th:src="@{/js/Functions.js}"></script>
     <script type="text/javascript" th:src="@{/js/functionScriptClient.js}"></script>
     <script type="text/javascript" th:src="@{/js/functionScriptHeader.js}"></script>
-    <script src="js/functionScriptClient.js"></script>
-    <script src="js/functionScriptHeader.js"></script>
     <script>
         $(document).ready(function () {
             username();

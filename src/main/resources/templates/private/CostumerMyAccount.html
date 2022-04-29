@@ -8,11 +8,8 @@
     <title>LingStar</title>
 
     <!-- Styles -->
-    <link rel="shortcut icon" href="../../static/img/LSbW.png">
     <link rel="shortcut icon" th:href="@{/img/LSbW.png}">
-    <link rel="stylesheet" href="../../static/css/styleWsp.css">
     <link rel="stylesheet" th:href="@{/css/styleWsp.css}">
-    <link rel="stylesheet" href="../../static/css/styleClienteInterfaz.css">
     <link rel="stylesheet" th:href="@{/css/styleClienteInterfaz.css}">
     <script src="https://kit.fontawesome.com/2cb25f2c39.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
@@ -35,7 +32,6 @@
                 <img class="logo" th:src="@{/img/LogocutWwithoutback.png}">
             </div>
             <div class="items">
-                <!-- <p><script>document.write(new Date().getFullYear());</script></p> -->
                 <span class="user" id="name"></span>
                 <span>|</span>
                 <form th:action="@{/logout}" method="POST">
@@ -98,8 +94,6 @@
                         </div>
                     </div>
                     <div class="buttons-client">
-                        <!-- <button class="btn btn-guardarClient" id="btn-agregarClient" onclick="agregarClient()">Agregar</button>
-                        <button class="btn btn-listarClient" id="btn-listarClient" onclick="listarClient()">Listar</button> -->
                         <button class="btn btn-guardarEdicionClient" id="btn-guardarEdicionClient"
                             onclick="actualizarRegistroClient()">Actualizar</button>
                     </div>
@@ -107,7 +101,6 @@
                 <div class="col-lg-6">
                     <div class="imagen-client">
                         <img class="img-client" th:src="@{/img/Hidden-amico.svg}" alt="google-image">
-                        <!-- <img class="img-client" src="../../static/img/Hidden-amico.svg" alt="google-image"> -->
                     </div>
                 </div>
             </div>
@@ -129,8 +122,6 @@
     <script type="text/javascript" th:src="@{/js/Functions.js}"></script>
     <script type="text/javascript" th:src="@{/js/functionScriptClient.js}"></script>
     <script type="text/javascript" th:src="@{/js/functionScriptHeader.js}"></script>
-    <script src="js/functionScriptClient.js"></script>
-    <script src="js/functionScriptHeader.js"></script>
     <script>
         $(document).ready(function () {
             username();
