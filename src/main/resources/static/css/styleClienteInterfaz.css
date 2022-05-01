@@ -69,16 +69,47 @@ header{
     margin-left: 30px;
 }
 
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav */
 .sidebar{    
     font-family:"Anton", sans-serif;
     top: 100px;
     position: fixed;
     left: 0;
     height: 100%;
-    width: 300px;
+    width: 0;
     background: seagreen;
-    z-index: 1;
+    z-index: 99;
     border-radius: 3px;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.sidebar .closeSidebar {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 50px;
+    margin-left: 50px;
+    color: #E9ECF4;
+    transition: 0.5s;
+}
+
+.openSidebar{
+    position: absolute;
+    margin-left: 20px;
+    font-size: 40px;
+    color: black;
+    font-weight: bold;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+
+.sidebar ul>li>a{
+  display: block;
+  transition: 0.3s;
 }
 
 .logo-details{
@@ -109,14 +140,16 @@ header{
 }
 
 .sidebar .nav-links{
+    padding-left: 10px;
+    transition: 0.3s;
     margin-top: 30px;
     height: 100%;
     padding-top: 30px;
 }
 
 li{
+    z-index: -1;
     padding: 10px 10px;
-    position: relative;
     list-style: none;
     display: flex;
     align-items: center;
@@ -184,14 +217,19 @@ li i{
     margin-left: 75px;
 }
 
+
+
 body{
     right: 0;
 }
 
 .contenido{
+    max-width: 1200px;
+    width: 90%;
+    z-index: 99;
     font-family:"Anton", sans-serif;
-    margin-left: 300px;
-    margin-top: 80px;
+    margin: auto;
+    margin-top: 100px;
 }
 
 h1{
@@ -259,24 +297,22 @@ select{
 
 .formulario-client{
     margin: auto;
-    width: 450px;
+    margin-left: 50px;
+    margin-right: 50px;
     background-color: seagreen;
     border-radius: 10px;
     padding: 10px;
-    grid-column: 1/2;
-    grid-row: 2/3;
     display: flex;
     flex-direction: column;
 }
 
 .formulario-Reserva{
     margin: auto;
-    width: 450px;
+    margin-left: 50px;
+    margin-right: 50px;
     background-color: seagreen;
     border-radius: 10px;
     padding: 10px;
-    grid-column: 1/2;
-    grid-row: 2/3;
     display: flex;
     flex-direction: column;
 }
@@ -302,16 +338,29 @@ select{
     font-size: 1rem;
 }
 
+.imagen-client{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .img-client{
+    margin: auto;
     margin-top: 150px;
     height: 450px;
-    width: 500px;
+    width: 80%;
 }
 
 .input-client p,
 .input-Reserva p{
     color: #fff;
     letter-spacing: 1px;
+}
+
+.input-Reserva input,
+.input-client input{
+    width: 100%;
 }
 
 /**
@@ -321,7 +370,7 @@ select{
     border: none;
     font-family: 'Roboto', sans-serif;
     max-width: 1200px;
-    margin-left: 350px;
+    margin: auto;
     margin-top: 150px;
     display: flex;
     flex-wrap: wrap;
@@ -407,6 +456,8 @@ select{
 }
 
 .cards .description h2{
+    font-family:"Anton", sans-serif;
+    letter-spacing: 1px;
     margin-top: 10px;
 }
 
@@ -415,6 +466,7 @@ select{
 }
 
 .cards .description input{
+    font-weight: bold;
     padding: 10px 40px;
     margin-top: 20px;
     background: seagreen;
@@ -464,4 +516,88 @@ select{
 
 .btn-borrarRegistroReserva:hover{
     background-color: rgb(192, 75, 75);
+}
+
+@media (max-width:800px){
+    .logo{
+        width: 80px;
+        margin-left: 10px;
+    }
+    .items{
+        margin-right: 10px;
+    }
+    .formulario-Reserva{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .formulario-client{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .img-client{
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 1600px) {
+
+    .sidebar{
+        width: 300px;
+    }
+        
+}
+
+/* 
+##Device = Laptops, Desktops
+##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+/* CSS */
+
+}
+
+/* 
+##Device = Tablets, Ipads (portrait)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+/* CSS */
+
+}
+
+/* 
+##Device = Tablets, Ipads (landscape)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+/* CSS */
+
+}
+
+/* 
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+/* CSS */
+
+}
+
+/* 
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+/* CSS */
+
 }

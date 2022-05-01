@@ -1,32 +1,43 @@
 function agregarReserva() {
-    var datos={
-        room:$("#room").val(),
-        dateGetInto:$("#startdate").val(),
-        dateGetOut:$("#enddate").val(),
-        user:{id: +$("#select-user").val()}
-    }
-    let datosPeticion=JSON.stringify(datos);
-    $.ajax({
-        url:`http://158.101.30.210:8081/api/reservation/new`,
-        data:datosPeticion,
-        type:"POST",
-        contentType:"application/JSON",
-        success:function (){
-            console.log("insertado exitosamente")
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Reservado exitosamente',
-                showConfirmButton: false,
-                timer: 1800
-            });
-            $("#startdate").val("");
-            $("#enddate").val("");
-        },
-        error:function(xhr, status){
-            console.log(status);
+    var incio = $("#startdate").val()
+    var fin = $("#enddate").val()
+    if(incio.length==0 || fin.length==0){
+        Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: 'Elige un rango de Fecha',
+            showConfirmButton: true,
+        });
+    } else {
+        var datos={
+            room:$("#room").val(),
+            dateGetInto:$("#startdate").val(),
+            dateGetOut:$("#enddate").val(),
+            user:{id: +$("#select-user").val()}
         }
-    });
+        let datosPeticion=JSON.stringify(datos);
+        $.ajax({
+            url:`http://158.101.30.210:8081/api/reservation/new`,
+            data:datosPeticion,
+            type:"POST",
+            contentType:"application/JSON",
+            success:function (){
+                console.log("insertado exitosamente")
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Reservado exitosamente',
+                    showConfirmButton: false,
+                    timer: 1800
+                });
+                $("#startdate").val("");
+                $("#enddate").val("");
+            },
+            error:function(xhr, status){
+                console.log(status);
+            }
+        });
+    }
 }
 
 function validateReservation() {

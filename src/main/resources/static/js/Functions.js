@@ -8,6 +8,14 @@ $(document).ready(function(){
     });
 });
 
+function openSidebar() {
+    document.getElementById("sidebar").style.width="300px";
+}
+
+function closeSidebar() {
+    document.getElementById("sidebar").style.width="0";
+}
+
 function username() {
     $.ajax({
         url:`http://158.101.30.210:8081/api/user/username`,
