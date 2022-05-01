@@ -64,8 +64,20 @@ function MisReservas() {
         dataType:'JSON',
         success:function(request) {
             console.log(request)
-            listarRespuestaReserva(request.reservations);
-            // listarRespuestaReserva(respuesta);
+            var reservations = request.reservations
+            if(reservations.length==0) {
+                listarRespuestaReserva(request.reservations);
+                Swal.fire({
+                    position: 'center',
+                    icon: 'warning',
+                    title: 'Aún no tienes reservas realizadas!',
+                    showConfirmButton: false,
+                    timer: 1900
+                })
+            } else {
+                listarRespuestaReserva(request.reservations);
+                // listarRespuestaReserva(respuesta);
+            }
         },
         error:function() {
             Swal.fire({
@@ -99,7 +111,7 @@ function listarRespuestaReserva(items) {
                 <tr>
                     <th>HABITACION</th>
                     <th>LLEGADA</th>
-                    <th>SALIDA</th>
+                    <th>SALIDA&nbsp;&nbsp;&nbsp;</th>
                 </tr>`;
                 // <th colspan="2">ACCIONES</th>
     for (let i = 0; i < items.length; i++) {

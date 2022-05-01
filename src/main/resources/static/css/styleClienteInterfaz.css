@@ -85,6 +85,8 @@ header{
 }
 
 .sidebar .closeSidebar {
+    font-family: "Lato", sans-serif;
+    text-decoration: none;
     position: absolute;
     top: 0;
     right: 25px;
@@ -95,11 +97,13 @@ header{
 }
 
 .openSidebar{
-    position: absolute;
+    position:absolute;
+    margin-top: 5px;
     margin-left: 20px;
     font-size: 40px;
     color: black;
     font-weight: bold;
+    z-index: 1;
 }
 
 @media screen and (max-height: 450px) {
@@ -282,7 +286,7 @@ select{
 .input-client p,
 .input-message p,
 .input-room p{
-    margin: 20px 40px 10px 40px;
+    margin: 0px 40px 20px 40px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -319,9 +323,7 @@ select{
 
 
 .titulo-client{
-    margin-top: 80px;
-    grid-column: 1/2;
-    grid-row: 1/2;
+    margin-top: 50px;
 }
 
 .titulo-Reserva{
@@ -338,7 +340,8 @@ select{
     font-size: 1rem;
 }
 
-.imagen-client{
+.imagen-client,
+.imagen-reservations{
     margin: auto;
     display: flex;
     justify-content: center;
@@ -348,8 +351,14 @@ select{
 .img-client{
     margin: auto;
     margin-top: 150px;
-    height: 450px;
-    width: 80%;
+    height: 75%;
+    width: auto;
+}
+
+.img-reservations{
+    margin: auto;
+    height: 75%;
+    width: auto;
 }
 
 .input-client p,
@@ -371,7 +380,7 @@ select{
     font-family: 'Roboto', sans-serif;
     max-width: 1200px;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -481,14 +490,21 @@ select{
     background: rgb(76, 179, 120);
 }
 
+.content-reserva{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
 
-
-
+.wrapper{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
 
 .listar-Reserva{
-    width: 60%;
-    margin-left: 500px;
-    margin-top: 200px;
+    margin: auto;
+    padding-top: 80px;
 }
 
 .listar-Reserva th,
@@ -497,10 +513,6 @@ select{
 .listar-Reserva table{
     padding: 10px;
 }
-
-
-
-
 
 .btn-borrarRegistroReserva{
     font-size: 15px;
@@ -517,6 +529,20 @@ select{
 .btn-borrarRegistroReserva:hover{
     background-color: rgb(192, 75, 75);
 }
+
+@media screen and (max-width:450px) {
+    .listar-Reserva th{
+        font-size: 12px;
+    }
+    .listar-Reserva td{
+        font-size: 10px;
+    }
+    .btn-borrarRegistroReserva{
+        font-size: 12px;
+        padding: 5px;
+    }
+}
+
 
 @media (max-width:800px){
     .logo{
