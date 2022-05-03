@@ -96,11 +96,22 @@ header{
     transition: 0.5s;
 }
 
+.openSidebar-content{
+    position: absolute;
+    margin-top: 17px;
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    background-color: rgb(233 233 233);
+    border-radius: 10px;
+}
+
 .openSidebar{
     position:absolute;
-    margin-top: 5px;
-    margin-left: 20px;
-    font-size: 40px;
+    margin-top: 15px;
+    margin-left: 30px;
+    font-size: 35px;
     color: black;
     font-weight: bold;
     z-index: 1;
@@ -144,11 +155,11 @@ header{
 }
 
 .sidebar .nav-links{
-    padding-left: 10px;
     transition: 0.3s;
     margin-top: 30px;
     height: 100%;
     padding-top: 30px;
+    padding-left: 0;
 }
 
 li{
@@ -181,6 +192,7 @@ li i{
 
 .sidebar .nav-links li:hover{
     background: #197941;
+    transition: all .5s ease;
 }
 
 .bx{
@@ -571,59 +583,4 @@ select{
         width: 300px;
     }
         
-}
-
-/* 
-##Device = Laptops, Desktops
-##Screen = B/w 1025px to 1280px
-*/
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-
-/* CSS */
-
-}
-
-/* 
-##Device = Tablets, Ipads (portrait)
-##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) {
-
-/* CSS */
-
-}
-
-/* 
-##Device = Tablets, Ipads (landscape)
-##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-/* CSS */
-
-}
-
-/* 
-##Device = Low Resolution Tablets, Mobiles (Landscape)
-##Screen = B/w 481px to 767px
-*/
-
-@media (min-width: 481px) and (max-width: 767px) {
-
-/* CSS */
-
-}
-
-/* 
-##Device = Most of the Smartphones Mobiles (Portrait)
-##Screen = B/w 320px to 479px
-*/
-
-@media (min-width: 320px) and (max-width: 480px) {
-
-/* CSS */
-
 }

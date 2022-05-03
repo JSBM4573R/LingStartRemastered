@@ -111,14 +111,16 @@ header a{
     font-size: 23px;
 }
 
+.main-text-content{
+    height: auto;
+}
+
 .main-text a{
     text-decoration: none;
 }
 
-
-
 .main-text h1 {
-    margin-top: 140px;
+    margin-top: 110px;
     font-size: 60px;
 }
 
@@ -135,15 +137,20 @@ header a{
     margin: auto;
 }
 
-.main-text a {
+.login-content {
     margin-top: 150px;
     font-size: 1em;
     color: #2e8b57
 }
 
-@media screen and (max-width:800px) {
+.login-content:hover{
+    color: #5dba85
+}
+
+
+@media screen and (max-width:990px) {
     .main-text p{
-        padding: 1.2rem 0rem 1.2rem 0;
+        padding: 1.2rem .5rem 1.2rem 0;
         margin: auto;
     }
 }
@@ -202,21 +209,17 @@ header a{
     margin-top: 250px;
 }
 
-
 .section{
     margin-top: 600px;
     width: 100%;
     background-color: #f1f1f1;
 }
 
-
-
 .container {
     width: 20%;
     margin: auto;
     padding-top: 0px;
 }
-
 
 .image-section {
     display: flex;
@@ -243,32 +246,30 @@ header a{
 
 }
 
-@media screen and (max-width: 900px) {
-    .content-section {
-        margin-top: 200px;
+@media screen and (max-width: 991px) {
+    .content-section{
+        margin-top: 5px;
     }
+    .content p{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 900px) {
     .content-section .content p{
-        margin: 0%;
         font-size: 1.3rem;
     }
     .content-section .content{
-        margin: 0%;
         padding: 0%;
         font-size: 1rem;
     }
 }
 
 @media screen and (max-width: 800px) {
-    .content-section {
-        margin-top: 200px;
-    }
     .content-section .content p{
-        margin: 0%;
         font-size: 1.3rem;
     }
     .content-section .content{
-        margin: 0%;
-        padding: 0%;
         font-size: 1rem;
     }
     .main-text h1{
@@ -279,18 +280,13 @@ header a{
 
 @media screen and (max-width: 720px) {
     section .content-section {
-        margin-top: 350px;
         margin-bottom: 40px;
         padding: 10px;
     }
     .content-section .content p{
-        margin: 0%;
-        padding: 0%;
         font-size: 1rem;
     }
     .content-section .content{
-        margin: 0%;
-        padding: 0%;
         font-size: 1rem;
     }
     .main-text p{
@@ -323,28 +319,15 @@ header a{
 }
 
 .content p{
+    margin-top: 20px;
     font-size: 25px;
 }
 
 .content-section .image-section img{
     height: auto;
     width: 800px;
-    margin-right: 50px;
 }
 
-@media screen and (max-width: 770px) {
-
-    .content-section {
-        display: block;
-        margin: auto;
-        margin-top: 400px;
-    }
-
-    .image-section {
-        display: none;
-    }
-
-}
 
 /*footer*/
 footer {    
@@ -370,6 +353,8 @@ footer {
 }
 
 .footer-content h3 {
+    font-family:"Anton", sans-serif;
+    text-align: center;
     font-size: 2rem;
     font-weight: 400;
     text-transform: capitalize;
@@ -392,7 +377,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0 2rem 0;
+    margin: 1rem 2.5rem 2rem 0;
 }
 
 .socials li {
@@ -422,6 +407,7 @@ footer {
 }
 
 .footer-bottom p {
+    font-family:Arial, Helvetica, sans-serif;
     font-size: 14px;
     word-spacing: 2px;
     text-transform: capitalize;
@@ -436,19 +422,18 @@ footer {
 
 /* ************************************************************ */
 
-@media (min-width: 1281px) {
-
+@media screen and (min-width: 1281px) {
     .asd .qwe-img,
     .asd .ewq-img{
-        height: 50%;
+        transform: translateY(-30%);
+        height: 45%;
         width: auto;
     }
     .asd:hover .qwe-img{
         bottom: 150px;
     }
-    
     .asd:hover .ewq-img{
-        left: 850px;
+        left: 45%;
     }
 }
 
@@ -459,10 +444,13 @@ footer {
 
 @media (min-width: 1025px) and (max-width: 1280px) {
 
+    .main-text h1{
+        margin-top: 80px;
+    }
     .asd .qwe-img,
     .asd .ewq-img{
-        transform: translateY(10px);
-        height: 40%;
+        transform: translateY(-15%);
+        height: 38%;
         width: auto;
     }
     .asd:hover .qwe-img{
@@ -470,9 +458,8 @@ footer {
     }
     
     .asd:hover .ewq-img{
-        left: 450px;
+        left: 45%;
     }
-
 }
 
 /* 
@@ -480,165 +467,36 @@ footer {
 ##Screen = B/w 768px to 1024px
 */
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 991px) and (max-width: 1025px) {
 
+    .main-text h1{
+        margin-top: 50px;
+    }
     .asd .qwe-img,
     .asd .ewq-img{
-        transform: translateY(150px);
-        left: 200px;
-        height: 40%;
+        transform: translateY(-15%);
+        left: 500px;
+        height: 35%;
         width: auto;
     }
     .asd:hover .qwe-img{
         bottom: 150px;
+    }
+    .asd:hover .ewq-img{
+        left: 420px;
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+
+    .main-text h1{
+        margin-top: 50px;
+        text-align: center;
+    }
+    .asd{
+        display: none;
     }
     
-    .asd:hover .ewq-img{
-        left: 120px;
-    }
 
-}
-
-/* 
-##Device = Tablets, Ipads (landscape)
-##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-    .asd .qwe-img,
-    .asd .ewq-img{
-        transform: translateY(150px);
-        left: 280px;
-        height: 40%;
-        width: auto;
-    }
-    .asd:hover .qwe-img{
-        bottom: 150px;
-    }
-    
-    .asd:hover .ewq-img{
-        left: 120px;
-    }
-
-}
-
-/* 
-##Device = Low Resolution Tablets, Mobiles (Landscape)
-##Screen = B/w 481px to 767px
-*/
-
-@media (min-width: 550px) and (max-width: 767px) {
-
-    .asd .qwe-img,
-    .asd .ewq-img{
-        transform: translateY(200px);
-        left: 70px;
-        height: 40%;
-        width: auto;
-    }
-    .asd:hover .qwe-img{
-        bottom: 150px;
-    }
-    
-    .asd:hover .ewq-img{
-        left: 120px;
-    }
-
-}
-
-@media (min-width: 480px) and (max-width: 549px) {
-
-    .asd .qwe-img,
-    .asd .ewq-img{
-        transform: translateY(130px);
-        left: 50px;
-        height: 32%;
-        width: auto;
-    }
-    .asd:hover .qwe-img{
-        bottom: 150px;
-    }
-    
-    .asd:hover .ewq-img{
-        left: 100px;
-    }
-
-}
-
-/* 
-##Device = Most of the Smartphones Mobiles (Portrait)
-##Screen = B/w 320px to 479px
-*/
-
-@media (min-width: 435px) and (max-width: 479px) {
-
-    .asd .qwe-img,
-    .asd .ewq-img{
-        transform: translateY(200px);
-        left: 50px;
-        height: 30%;
-        width: auto;
-    }
-    .asd:hover .qwe-img{
-        bottom: 150px;
-    }
-    
-    .asd:hover .ewq-img{
-        left: 100px;
-    }
-
-}
-
-@media (min-width: 390px) and (max-width: 434px) {
-
-    .asd .qwe-img,
-    .asd .ewq-img{
-        transform: translateY(150px);
-        left: 40px;
-        height: 26%;
-        width: auto;
-    }
-    .asd:hover .qwe-img{
-        bottom: 150px;
-    }
-    
-    .asd:hover .ewq-img{
-        left: 100px;
-    }
-
-}
-
-@media (min-width: 360px) and (max-width: 389px) {
-
-    .asd .qwe-img,
-    .asd .ewq-img{
-        transform: translateY(350px);
-        left: 40px;
-        height: 28%;
-        width: auto;
-    }
-    .asd:hover .qwe-img{
-        bottom: 150px;
-    }
-    .asd:hover .ewq-img{
-        left: 100px;
-    }
-}
-
-@media (min-width: 250px) and (max-width: 359px) {
-
-    .asd .qwe-img,
-    .asd .ewq-img{
-        transform: translateY(180px);
-        left: 40px;
-        height: 20%;
-        width: auto;
-    }
-    .asd:hover .qwe-img{
-        bottom: 150px;
-    }
-    .asd:hover .ewq-img{
-        left: 100px;
-    }
 }

@@ -2,7 +2,7 @@
 	position:fixed;
 	width:60px;
 	height:60px;
-	bottom:30px;
+	bottom:0;
 	right:2px;
 	background-color:#25d366;
 	color:#FFF;
@@ -24,4 +24,11 @@
 
 .my-float{
 	margin-top:16px;
+}
+
+@media screen and (max-width:550px) {
+	.float{
+		margin-right: 20px;
+		margin-bottom: 10px;
+	}
 }
